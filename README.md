@@ -43,3 +43,10 @@ IP-to-country datasets are often distributed as CSV files with IP ranges. To res
 - Rows with fewer than two columns raise `ValueError` during loading.
 
 The exported names are `IPGeolocationLoader` and its methods `lookup`, `__len__`, and the properties `starts` and `countries`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
