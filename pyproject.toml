@@ -1,6 +1,6 @@
 [project]
 name = "ip-geolocation-loader"
-version = "0.1.0"
+version = "0.1.1"
 description = "Load and index IP-to-country CSV data for fast range lookup using binary search on sorted start addresses."
 requires-python = ">=3.10"
 dependencies = []
